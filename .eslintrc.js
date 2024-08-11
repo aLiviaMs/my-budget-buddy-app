@@ -39,7 +39,27 @@ module.exports = {
 		},
 	},
 	rules: {
-		'@typescript-eslint/no-unused-vars': 'error',
+		'@typescript-eslint/no-unused-vars': [
+			'warn',
+			{
+				args: 'all',
+				argsIgnorePattern: '^_',
+				caughtErrors: 'all',
+				caughtErrorsIgnorePattern: '^_',
+				destructuredArrayIgnorePattern: '^_',
+				varsIgnorePattern: '^_',
+				ignoreRestSiblings: true,
+			},
+		],
+		'@typescript-eslint/naming-convention': [
+			'error',
+			{
+				selector: 'memberLike',
+				modifiers: ['private'],
+				format: ['camelCase'],
+				leadingUnderscore: 'require',
+			},
+		],
 		'global-require': 0,
 		'react-hooks/exhaustive-deps': 'off',
 		quotes: ['error', 'single'],
