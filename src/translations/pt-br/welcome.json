@@ -1,0 +1,5 @@
+{
+  "title": "Bem-vindo ao",
+  "subtitle": "$t(common:appName.full)",
+  "description": "Você quer descobrir algumas funcionalidades? Basta clicar em um dos três botões na parte inferior da tela. O primeiro permite que você chame uma API REST. O segundo permite que você altere a cor do tema. E o terceiro permite que você mude o idioma."
+}

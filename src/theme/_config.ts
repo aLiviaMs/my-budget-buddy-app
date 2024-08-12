@@ -2,8 +2,16 @@ import { DarkTheme, DefaultTheme } from '@react-navigation/native';
 
 import type { ThemeConfiguration } from '@/types/theme/config';
 
+// TODO: Add new colors, on both themes, needs to add font-family too
 const colorsLight = {
-	red500: '#C13333',
+	principal700: '#014251',
+	principal500: '#015D71',
+	principal300: '#0195B7',
+	principal100: '#0bd1fe',
+	red700: '#E03131',
+	red500: '#FF6B6B',
+	red300: '#FFD0D0',
+	red100: '#FFF5F5',
 	gray800: '#303030',
 	gray400: '#4D4D4D',
 	gray200: '#A1A1A1',
@@ -15,7 +23,14 @@ const colorsLight = {
 } as const;
 
 const colorsDark = {
-	red500: '#C13333',
+	principal700: '#00121D',
+	principal500: '#00263D',
+	principal300: '#003F66',
+	principal100: '#004B7A',
+	red700: '#E03131',
+	red500: '#FF6B6B',
+	red300: '#FFD0D0',
+	red100: '#FFF5F5',
 	gray800: '#E0E0E0',
 	gray400: '#969696',
 	gray200: '#BABABA',
