@@ -1,21 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  Text,
-} from 'react-native';
+import { Router } from './Router';
+import { AuthProvider } from './app/@core/contexts/Auth';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
-      <Text>Hello World</Text>
-    </SafeAreaView>
+    <AuthProvider>
+      <Router />
+    </AuthProvider>
   );
 }
 
