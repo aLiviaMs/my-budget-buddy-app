@@ -1,22 +1,13 @@
 // apiService.ts
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
 import { environment } from '../../../../enviroment';
+import AsyncStorageService from '../services/StorageService';
 import { ApiError, ApiResponse, HttpHeaderType, HttpMethod } from './models';
 
-// TODO: create storage service
 // TODO: create specs
-const getToken = async (): Promise<string | null> => {
-  try {
-    return await AsyncStorage.getItem(environment.tokenKey);
-  } catch (error) {
-    console.error('Erro ao obter o token:', error);
-    return null;
-  }
-};
 
 const setHeaders = async (mode: HttpHeaderType, xTokenCode?: string): Promise<Record<string, string>> => {
-  const bearerToken = await getToken();
+  const bearerToken = await AsyncStorageService.getToken();
 
   let headers: Record<string, string> = {
     'x-application-id': environment.applicationId,
@@ -60,7 +51,7 @@ export const apiCall = async <T>(
 const handleSuccess = <T>(response: AxiosResponse<ApiResponse<T>>): ApiResponse<T> => {
   const { data } = response;
   if (!data.status) {
-    throw new Error(data.error || 'Erro desconhecido');
+    throw new Error(data.error ?? 'Erro desconhecido');
   }
   return data;
 };
